@@ -1,0 +1,22 @@
+.blue {
+  color: #63C2C3 !important; }
+
+.orange {
+  color: #D87355 !important; }
+
+.grey {
+  color: #515151 !important; }
+
+.connexion-popup {
+  padding: 10px 30px;
+  /* top/bottom : 30px and left/right : 10px */ }
+
+.form-button {
+  background-color: #D87355;
+  color: white; }
+
+.register-button {
+  background-color: #63C2C3;
+  color: white; }
+
+/*# sourceMappingURL=connection.css.map */

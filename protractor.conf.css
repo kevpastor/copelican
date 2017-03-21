@@ -1,0 +1,59 @@
+/*
+Error: Invalid CSS after "": expected expression (e.g. 1px, bold), was "{"
+        on line 12 of protractor.conf.js
+
+7:   // The address of a running selenium server.
+8:   //seleniumAddress: 'http://localhost:4444/wd/hub',
+9:   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
+10: 
+11:   // Capabilities to be passed to the webdriver instance.
+12:   capabilities: {
+13:     'browserName': 'chrome'
+14:   },
+15: 
+16:   baseUrl: 'http://localhost:3000',
+17: 
+
+Backtrace:
+protractor.conf.js:12
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/script/lexer.rb:229:in `expected!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/script/parser.rb:710:in `assert_expr'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/script/parser.rb:75:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/script/parser.rb:240:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/script.rb:27:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:1151:in `parse_script'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:721:in `parse_property'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:692:in `parse_property_or_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:658:in `parse_line'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:536:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:555:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:545:in `block in build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:555:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:409:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:294:in `watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin.rb:109:in `method_missing'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"\": expected expression (e.g. 1px, bold), was \"{\"\A         on line 12 of protractor.conf.js\A \A 7:   // The address of a running selenium server.\A 8:   //seleniumAddress: 'http://localhost:4444/wd/hub',\A 9:   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json\A 10: \A 11:   // Capabilities to be passed to the webdriver instance.\A 12:   capabilities: {\A 13:     'browserName': 'chrome'\A 14:   },\A 15: \A 16:   baseUrl: 'http://localhost:3000',\A 17: "; }

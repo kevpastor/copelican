@@ -1,0 +1,235 @@
+<!doctype html>
+<html ng-app="copelican">
+  <head>
+    <meta charset="utf-8">
+    <title>Copelican - Envoyer & Transporter ensemble</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- include font-awesome to add facebook and twitter icons-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div ng-controller="MainController as main">
+    
+      <md-content>
+        <header>
+          <acme-navbar></acme-navbar>
+        </header>
+
+        <!-- ---------------------------
+        --
+        --  left pannel to add an object
+        --
+        -------------------------------- -->
+        <div layout="row">
+          <div flex="35" layout-align="stretch"> <!-- using layout-align="stretch" should make this layout fill all along the page -->
+            <div class="shipping white">
+
+              <form name="research">
+                <br/>
+                <h4>Mon expédition</h4>
+                <p>Je veux envoyer :</p>
+
+                <div layout="row">
+                  <md-input-container flex="50" class="md-block">
+                    <label style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;">Décrire l'objet</label>
+                    <input style="border-color: white; color: white;" required name="description" ng-model="object.description">
+                    <div ng-messages="research.description.$error">
+                      <div ng-message="required">Ce champ est obligatoire.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+
+                <div layout="row">
+                  <div flex="6">
+                    <p>De</p>
+                  </div>
+                  <md-input-container flex="45" class="md-block">
+                  <label style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;">Ville de départ</label>
+                  <input style="border-color: white; color: white;" required name="departure_city" ng-model="object.departure_city">
+                  <div ng-messages="research.departure_city.$error">
+                    <div ng-message="required">Ce champ est obligatoire.</div>
+                  </div>
+                  </md-input-container>
+                  <div flex="4">
+                    <p>à</p>
+                  </div>
+                  <md-input-container flex="45" class="md-block">
+                    <label style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;">Ville d'arrivée</label>
+                    <input style="border-color: white; color: white;" required name="arrival_city" ng-model="object.arrival_city">
+                    <div ng-messages="research.arrival_city.$error">
+                      <div ng-message="required">Ce champ est obligatoire.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                  <p flex="15">Avant</p>
+                  <div flex>
+                    <md-datepicker style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;" class="datepicker" ng-model="ctrl.myDate" md-placeholder="Jour du départ" md-open-on-focus></md-datepicker>
+                  </div>
+                </div>
+
+
+                <p>Mon envoi tient dans :</p>
+                <md-radio-group class="form-radio">
+
+                <div layout="row" layout-align="center" class="icon">
+
+                  <div flex="20">
+                    <img height="24" width="24" src="assets/images/bag.png" alt="sac à dos"/>
+                    <br/>un sac à dos
+                    <md-radio-button ng-model="capacity" value="bag" class="my-radio"></md-radio-button>
+                  </div>
+                  <div flex="20">
+                    <img height="24" width="24" src="assets/images/lugage.png" alt="valise"/>
+                    <br/>une valise
+                    <md-radio-button ng-model="capacity" value="lugage" class="my-radio"></md-radio-button>
+                  </div>
+                  <div flex="20">
+                    <img height="24" width="24" src="assets/images/car.png" alt="voiture"/>
+                    <br/>Voiture
+                    <md-radio-button ng-model="capacity" value="car" class="my-radio"></md-radio-button>
+                  </div>
+                  <div flex="20">
+                    <img height="24" width="24" src="assets/images/van.png" alt="sac à dos"/>
+                    <br/>Camionnette
+                    <md-radio-button ng-model="capacity" value="van" class="my-radio"></md-radio-button>
+                  </div>
+
+                </div>
+                </md-radio-group>
+
+                <div layout="row">
+                  <p flex="60">Les particularités de mon envoi :</p>
+                  <div flex="25">
+                    <md-select style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;" ng-model="particularity" placeholder="Sélection" class="md-no-underline">
+                      <md-option value="weak">Fragile</md-option>
+                      <md-option value="private">Confidentiel</md-option>
+                      <md-option value="heavy">Lourd</md-option>
+                    </md-select>
+                  </div>
+                  <div flex></div>
+                </div>
+
+                <div layout="row">
+                  <div layout-align="start" flex="40">
+                    <p>Je propose un prix de</p>
+                    <md-input-container class="md-block">
+                      <label style="border-color: #CCCCCC; color: #CCCCCC; font-size: 10pt;">Prix en €</label>
+                      <input style="border-color: white; color: white;" required name="price" ng-model="object.description">
+                      <div ng-messages="research.price.$error">
+                        <div ng-message="required">Ce champ est obligatoire.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+
+                  <div flex="5"></div>
+
+                  <div layout-align="end" flex="45">
+                    <p>Une photo de mon envoi :</p>
+                    <div flex="50" layout-align="center">
+                      <md-button layout-align="center" class="download-button" type="submit" name="clear">
+                        Télécharger
+                      </md-button>
+                    </div>
+                  </div>
+                </div>
+
+                <div layout="row">
+                  <a flex="5" href="#">
+                    <img class="button-more" src="assets/images/button-more.png" alt="Plus" />
+                  </a>
+                  <p flex="95">Informations complémentaires</p>
+                </div>
+
+                <div layout="row">
+                  <div flex="50" layout-align="center">
+                    <md-button layout-align="center" class="form-button" type="submit" name="modify">
+                      Modifier mon annonce
+                    </md-button>
+                  </div>
+                  <div flex="50" layout-align="center">
+                    <md-button layout-align="center" class="form-button" type="submit" name="clear">
+                      Nouvelle recherche
+                    </md-button>
+                  </div>
+                </div>
+                <br/>
+
+              </form>
+
+            </div>
+          </div>
+
+
+
+          <!-- --------------------------------------
+          --
+          --  right pannel showing existing journeys
+          --
+          ------------------------------------------- -->
+
+          <div flex>
+
+            <h4 class="blue center" layout-align="center">Voyages proposés</h4>
+
+            <div class="journeys" layout-align="center">
+              <md-card ng-repeat="journey in main.journeys"> <!--TODO ranger par date d'ajout par exemple en mettant un filtre | OrderBy 'date'-->
+                <md-card-content>
+                  <p class="md-title">{{journey.departure_city}}<i class="material-icons">arrow_forward</i>{{journey.arrival_city}}</p>
+                  <img height="48" width="48" ng-src="assets/images/{{journey.size}}" alt="image de voiture">
+                  <p>Transport fait :<br/>{{journey.vehicule}}</p>
+                </md-card-content>
+                <div class="md-action-buttons">
+                  <md-button class="card-button" ng-href="#" layout-align="left">Voir l'annonce</md-button>
+                  <md-button class="card-button" ng-href="#" layout-align="right">Choisir ce voyageur</md-button>
+                </div>
+                <br/>
+              </md-card>
+            </div>
+
+          </div>
+        </div>
+
+      </md-content>
+    
+    </div>
+    
+
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>

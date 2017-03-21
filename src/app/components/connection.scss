@@ -1,0 +1,29 @@
+$fontain-blue: #63C2C3;
+$japonica: #D87355;
+$emperor: #515151;
+
+.blue{
+  color: $fontain-blue !important;
+}
+
+.orange{
+  color: $japonica !important;
+}
+
+.grey{
+  color: $emperor !important;
+}
+
+.connexion-popup{
+  padding: 10px 30px; /* top/bottom : 30px and left/right : 10px */
+}
+
+.form-button{
+  background-color: $japonica;
+  color: white;
+}
+
+.register-button{
+  background-color: $fontain-blue;
+  color: white;
+}

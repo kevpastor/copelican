@@ -1,0 +1,49 @@
+$fontain-blue: #63C2C3;
+$japonica: #D87355;
+$emperor: #515151;
+
+.blue{
+  color: $fontain-blue !important;
+}
+
+.orange{
+  color: $japonica !important;
+}
+
+.grey{
+  color: $emperor !important;
+}
+
+md-toolbar{
+  background-color: white !important;
+  line-height: 1em !important;
+}
+
+.logo-copelican{
+  padding-top: 0.5em;
+  padding-left: 1em;
+  height: 48px;
+}
+
+a {
+  color: $emperor;
+}
+
+.fa{
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 2;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+}
+
+.connection-button{
+  :hover{
+    color: $japonica;
+  }
+}

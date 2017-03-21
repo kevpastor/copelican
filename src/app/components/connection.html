@@ -1,0 +1,68 @@
+<!doctype html>
+
+<link rel="stylesheet" href="connection.css">
+
+<div class="connexion-popup" layout-align="center">
+
+    <h2 class="orange">Connexion</h2>
+    <p class="blue">Pour accéder aux annonces</p>
+
+    <!-- TODO mettre boutons de connexion via facebook et google -->
+
+    <p class="orange">ou</p>
+
+    <form name="registration">
+        <div layout="row">
+            <md-input-container class="md-block">
+                <label style="border-color: #D87355; color: #D87355; font-size: 10pt;">Décrire l'objet</label>
+                <input style="border-color: white; color: white;" required name="description" ng-model="object.description">
+                <div ng-messages="research.description.$error">
+                    <div ng-message="required">Ce champ est obligatoire.</div>
+                </div>
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+            <md-input-container flex="50" class="md-block">
+                <label style="border-color: #D87355; color: #D87355; font-size: 10pt;">Décrire l'objet</label>
+                <input style="border-color: white; color: white;" required name="description" ng-model="object.description">
+                <div ng-messages="research.description.$error">
+                    <div ng-message="required">Ce champ est obligatoire.</div>
+                </div>
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+            <div flex="50" layout-align="start">
+                <md-checkbox ng-model="reminder-me" aria-label="Reminder" ng-switch-default="true"> /*TODO vérifier si ng-switch-default permet bien l'initialisation de la checkbox*/
+                    <p class="orange">Se souvenir de moi</p>
+                </md-checkbox>
+            </div>
+
+            <div flex="50" layout-align="end">
+                <a href="#" class="grey">Mot de passe oublié?</a>
+            </div>
+        </div>
+
+        <div layout="row" flex="50" layout-align="center">
+            <md-button layout-align="center" class="form-button" type="submit" name="clear">
+                Connexion
+            </md-button>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="row">
+            <div flex="50" layout-align="start">
+                <p class="grey">Vous n'avez pas de compte?</p>
+            </div>
+
+            <div flex="50" layout-align="end">
+                <md-button class="register-button">
+                    Inscription
+                </md-button>
+            </div>
+        </div>
+
+    </form>
+</div>

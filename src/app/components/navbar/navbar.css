@@ -1,0 +1,38 @@
+.blue {
+  color: #63C2C3 !important; }
+
+.orange {
+  color: #D87355 !important; }
+
+.grey {
+  color: #515151 !important; }
+
+md-toolbar {
+  background-color: white !important;
+  line-height: 1em !important; }
+
+.logo-copelican {
+  padding-top: 0.5em;
+  padding-left: 1em;
+  height: 48px; }
+
+a {
+  color: #515151; }
+
+.fa {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 2;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal; }
+
+.connection-button :hover {
+  color: #D87355; }
+
+/*# sourceMappingURL=navbar.css.map */
