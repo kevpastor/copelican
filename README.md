@@ -1,4 +1,4 @@
-To lauch the app, you may need to install some tools such as the following \:
+To launch the app, you may need to install some tools such as the following \:
 
 - node
 - npm
